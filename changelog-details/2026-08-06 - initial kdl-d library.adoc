@@ -1,0 +1,14 @@
+= Initial kdl-d library
+
+Native KDL implementation under `dlang-supplemental`.
+
+== Why
+
+No DUB package provided a KDL parser/writer for D (`newsdlang` dropped earlier KDL plans). This library fills that gap for configuration and document interchange.
+
+== What
+
+* DOM model: documents, nodes, arguments, properties, type annotations
+* Hybrid parse: KDL 2.0 first, KDL 1.0 fallback; explicit `KdlVersion` override
+* Writer emitting v2 (default) or v1 keyword forms
+* Unit tests covering common documents, slashdash comments, and keyword dialects

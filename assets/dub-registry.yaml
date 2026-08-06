@@ -1,0 +1,10 @@
+# Categories and registry metadata for dub-publish / agents.
+# Category ids match code.dlang.org (see dlang/dub-registry categories.json).
+
+package: kdl
+repository: https://github.com/dlang-supplemental/kdl-d
+docs_url: https://github.com/dlang-supplemental/kdl-d#readme
+logo: assets/logo.png
+categories:
+  - library.data
+  - library.development.parsing

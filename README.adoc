@@ -1,0 +1,115 @@
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/dub/v/kdl.svg?style=for-the-badge[Dub version,link=https://code.dlang.org/packages/kdl]
+image:https://img.shields.io/github/contributors/dlang-supplemental/kdl-d.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/kdl-d/graphs/contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/kdl-d.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/kdl-d/network/members]
+image:https://img.shields.io/github/stars/dlang-supplemental/kdl-d.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/kdl-d/stargazers]
+image:https://img.shields.io/github/issues/dlang-supplemental/kdl-d.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/kdl-d/issues]
+image:https://img.shields.io/github/license/dlang-supplemental/kdl-d.svg?style=for-the-badge[License,link=https://github.com/dlang-supplemental/kdl-d/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/dub/v/kdl.svg?style=for-the-badge[Dub version]
+image:https://img.shields.io/github/contributors/dlang-supplemental/kdl-d.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/kdl-d.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/dlang-supplemental/kdl-d.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/dlang-supplemental/kdl-d.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/dlang-supplemental/kdl-d.svg?style=for-the-badge[License]
+endif::[]
+
+= kdl-d
+
+Native https://kdl.dev/[KDL] document language parser and writer for the D programming language.
+
+link:https://github.com/dlang-supplemental/kdl-d/issues[Report Bug] ·
+link:https://github.com/dlang-supplemental/kdl-d/issues[Request Feature]
+
+Package name on DUB: `kdl`.
+
+== About The Project
+
+KDL is a node-oriented document language (XML-like semantics, CLI-ish syntax). This library provides a DOM API plus `parseKdl` / `writeKdl` with hybrid **KDL 1.0** and **KDL 2.0** support.
+
+No prior DUB package shipped a dedicated KDL implementation for D (`newsdlang` dropped earlier KDL plans).
+
+== Features
+
+* Document / node / argument / property / type-annotation DOM
+* Hybrid parse: prefer KDL 2.0, fall back to KDL 1.0; honor `/- kdl-version N`
+* Slashdash comments (`/-`), `//` and nested `/* */` comments
+* Writer with v1 or v2 keyword forms (`true` vs `#true`, …)
+* Zero dependencies beyond Phobos
+
+== Usage
+
+[source,d]
+----
+import kdl;
+
+void main()
+{
+    auto doc = parseKdl(`
+        title "Hello KDL"
+        person name="Ada" age=36 {
+            interest "math"
+        }
+    `);
+
+    assert(doc.node("title").arguments[0].asString == "Hello KDL");
+    assert(doc.node("person").property("name").value.asString == "Ada");
+
+    import std.stdio : writeln;
+    writeln(writeKdl(doc));
+}
+----
+
+Force a dialect:
+
+[source,d]
+----
+auto v2 = parseKdl(`flags enabled=#true`, KdlVersion.v2);
+auto v1 = parseKdl(`flags enabled=true`, KdlVersion.v1);
+----
+
+== Installation
+
+Add to `dub.json`:
+
+[source,json]
+----
+"dependencies": {
+    "kdl": "~>0.1.0"
+}
+----
+
+Or `dub.sdl`:
+
+[source,sdl]
+----
+dependency "kdl" version="~>0.1.0"
+----
+
+== Spec references
+
+* https://kdl.dev/spec/[KDL 2.0.0 specification]
+* https://github.com/kdl-org/kdl/blob/main/SPEC_v1.md[KDL 1.0.0 specification]
+
+== Changelog
+
+See link:CHANGELOG.adoc[CHANGELOG].
+
+== License
+
+Boost Software License 1.0 — see link:LICENSE[LICENSE].
+
+== Contact
+
+DLang Supplemental — dlang@devcentr.org
+
+* Project: https://github.com/dlang-supplemental/kdl-d
+* Site: https://dlang-supplemental.github.io
+* DUB: https://code.dlang.org/packages/kdl

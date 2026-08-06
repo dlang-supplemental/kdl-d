@@ -1,0 +1,9 @@
+= Changelog
+
+== 0.1.0 (2026-08-06)
+
+* Initial native KDL library for D: DOM (`KdlDocument` / `KdlNode` / `KdlValue`), hybrid v1+v2 parser, and writer.
+* `parseKdl` auto-detects `/- kdl-version N` hints and otherwise prefers KDL 2.0 with KDL 1.0 fallback.
+* Package assets for DUB registry metadata (logo, categories, docs URL).
+
+link:changelog-details/2026-08-06 - initial kdl-d library.adoc[Details]

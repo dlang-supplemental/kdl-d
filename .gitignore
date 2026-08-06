@@ -1,0 +1,41 @@
+*
+# D build artifacts
+*.o
+*.obj
+*.lst
+*.lib
+*.a
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+dub.selections.json
+.dub/
+docs.json
+__dummy.html
+docs/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Local agent notes (never commit)
+MEMORIES.md
+!
+!LICENSE
+!README.adoc
+!CHANGELOG.adoc
+!dub.sdl
+!source/
+!source/**
+!assets/
+!assets/**
+!changelog-details/
+!changelog-details/**
+!.github/
+!.github/**
+!.gitignore
