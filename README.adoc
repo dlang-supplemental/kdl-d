@@ -3,6 +3,28 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://code.dlang.org/packages/kdl"><img src="https://img.shields.io/dub/v/kdl.svg?style=for-the-badge" alt="Dub version"></a>
+<a href="https://github.com/dlang-supplemental/kdl-d/graphs/contributors"><img src="https://img.shields.io/github/contributors/dlang-supplemental/kdl-d.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/dlang-supplemental/kdl-d/network/members"><img src="https://img.shields.io/github/forks/dlang-supplemental/kdl-d.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/dlang-supplemental/kdl-d/stargazers"><img src="https://img.shields.io/github/stars/dlang-supplemental/kdl-d.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/dlang-supplemental/kdl-d/issues"><img src="https://img.shields.io/github/issues/dlang-supplemental/kdl-d.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/dlang-supplemental/kdl-d/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dlang-supplemental/kdl-d.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">kdl-d</h3>
+<p align="center">
+Native <a href="https://kdl.dev/">KDL</a> document language parser and writer for the D programming language.<br />
+<a href="https://github.com/dlang-supplemental/kdl-d/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/dlang-supplemental/kdl-d/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
 ifndef::env-github[]
 image:https://img.shields.io/dub/v/kdl.svg?style=for-the-badge[Dub version,link=https://code.dlang.org/packages/kdl]
 image:https://img.shields.io/github/contributors/dlang-supplemental/kdl-d.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/kdl-d/graphs/contributors]
@@ -10,16 +32,6 @@ image:https://img.shields.io/github/forks/dlang-supplemental/kdl-d.svg?style=for
 image:https://img.shields.io/github/stars/dlang-supplemental/kdl-d.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/kdl-d/stargazers]
 image:https://img.shields.io/github/issues/dlang-supplemental/kdl-d.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/kdl-d/issues]
 image:https://img.shields.io/github/license/dlang-supplemental/kdl-d.svg?style=for-the-badge[License,link=https://github.com/dlang-supplemental/kdl-d/blob/main/LICENSE]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/dub/v/kdl.svg?style=for-the-badge[Dub version]
-image:https://img.shields.io/github/contributors/dlang-supplemental/kdl-d.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/dlang-supplemental/kdl-d.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/dlang-supplemental/kdl-d.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/dlang-supplemental/kdl-d.svg?style=for-the-badge[Issues]
-image:https://img.shields.io/github/license/dlang-supplemental/kdl-d.svg?style=for-the-badge[License]
-endif::[]
 
 = kdl-d
 
@@ -27,6 +39,7 @@ Native https://kdl.dev/[KDL] document language parser and writer for the D progr
 
 link:https://github.com/dlang-supplemental/kdl-d/issues[Report Bug] ·
 link:https://github.com/dlang-supplemental/kdl-d/issues[Request Feature]
+endif::[]
 
 Package name on DUB: `kdl`.
 
